@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angle checker</title>
+  <link rel="stylesheet" href="Firstact.css">
+</head>
+<body>
+  <nav>
+    <hr>
+    <div class="forNav">
+      <ul>
+        <li><button><a href="">Task #1</a></button></li>
+        <li><button><a href="second.html">Task #2</a></button></li>
+        <li><button><a href="third.html">Task #3</a></button></li>
+        <li><button><a href="fourth.html">Task #4</a></button></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="title">
+      <h1 data-text="Angle Checker">Angle <span>Checker</span></h1>
+    </div>
+    <!--firstAngle-->
+    <div class="first">
+      <label for="num1">First Angle:</label>
+        <input type="number" id="num1" placeholder="Enter first angle">
+    </div>
+    <!--secondAngle-->
+    <div class="second">
+      <label for="num2">Second Angle:</label>
+        <input type="number" id="num2" placeholder="Enter second angle">
+    </div>
+    <!--btn-->
+    <div class="button">
+      <button type="button" onclick="btn()">Calculate the third angle</button>
+    </div>
+    <!--result-->
+  <div class="result" id="result"></div>
+  </div>  
+
+  <script>
+   function btn(){
+      //variables
+      let num1 = parseInt(document.getElementById('num1').value); //firstAngle
+      let num2 = parseInt(document.getElementById('num2').value); //secondAngle
+
+      let result = document.getElementById("result");
+
+      if(isNaN(num1) || isNaN(num2)){
+        alert('Please enter an angle');
+      } else if ( num1 <= 0 || num2 <=0){
+        result.innerHTML = "Please input a valid number";
+      }else if(num1 + num2 >= 180){
+        result.innerHTML = 'Your angles exceeded 180 degrees';
+      }else {     
+        result.innerHTML = 180 - (num1+num2);          
+        document.getElementById("result").innerHTML="The third angle is: " + result.innerHTML + " degrees";
+      } 
+    }
+    
+  </script>
+</body>
+</html>

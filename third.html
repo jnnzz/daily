@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Electricity Bill Calculator</title>
+  <link rel="stylesheet" href="thirdAct.css">
+</head>
+<body>
+
+  <div class="container">
+      <h1>Electricity Bill Calculator</h1>
+
+      <!--ID-->
+      <div class="child">
+        <label for="customerId">Customer ID:</label>
+        <input type="text" id="customerId" placeholder="Enter Customer ID"><br>
+
+      <!--NAME-->
+        <label for="customerName">Customer Name:</label>
+        <input type="text" id="customerName" placeholder="Enter Customer Name"><br>
+
+      <!--UNITS-->
+        <label for="unitsConsumed">Units Consumed:</label>
+        <input type="number" id="unitsConsumed" placeholder="Enter Units Consumed"><br>
+      </div>
+      <!--BTN-->
+      <div class="button">
+        <button onclick="calculateBill()">Calculate Bill</button>
+      </div>
+      <!--RESULT-->
+      <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function calculateBill() {
+      // values
+      let customerId = document.getElementById('customerId').value;
+      let customerName = document.getElementById('customerName').value;
+      let unitsConsumed = parseInt(document.getElementById('unitsConsumed').value);
+
+      let chargePerUnit;
+
+      // Calculating charge per unit based on the given criteria
+      if (unitsConsumed <= 199) {
+        chargePerUnit = 1.20;
+      } else if (unitsConsumed >= 200 && unitsConsumed < 400) {
+        chargePerUnit = 1.50;
+      } else if (unitsConsumed >= 400 && unitsConsumed < 600) {
+        chargePerUnit = 1.80;
+      } else {
+        chargePerUnit = 2.00;
+      }
+
+      // Calculating total amount without surcharge
+      let amountWithoutSurcharge = unitsConsumed * chargePerUnit;
+
+      // Applying surcharge if total amount exceeds Rs. 400
+      let surcharge = 0;
+      if (amountWithoutSurcharge > 400) {
+        surcharge = (amountWithoutSurcharge * 15) / 100;
+      }
+
+      // Ensuring the minimum bill of Rs. 100
+      let totalAmount = amountWithoutSurcharge + surcharge;
+      if (totalAmount < 100) {
+        totalAmount = 100;
+      }
+
+      // Display
+      let result = document.getElementById('result');
+      result.innerHTML = `
+        <p>Customer IDNO: ${customerId}</p>
+        <p>Customer Name: ${customerName}</p>
+        <p>Units Consumed: ${unitsConsumed}</p>
+        <p>Amount Charges @Rs. ${chargePerUnit.toFixed(2)} per unit: ${amountWithoutSurcharge.toFixed(2)}</p>
+        <p>Surcharge Amount: ${surcharge.toFixed(2)}</p>
+        <p>Net Amount Paid By the Customer: ${totalAmount.toFixed(2)}</p>
+      `;
+    }
+  </script>
+</body>
+</html>

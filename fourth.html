@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="fourthAct.css">
+</head>
+<body>
+  
+  <div class="container">
+    <div class="title">
+      <h1>Prime Number Finder</h1>
+    </div>
+    <!--startingNum-->
+    <div class="child1">
+      <label for="number">Starting number: </label>
+      <input type="number" id="startNum">
+    </div>
+    <!--endingNum-->
+    <div class="child2">
+      <label for="number">Ending number: </label>
+      <input type="number" id="endNum">
+    </div>
+
+    <!--btn-->
+    <div class="button">
+      <button id="processButton" onclick="primeFinder()">Find</button>
+    </div>
+    <!--result-->
+    <div class="result">
+      <h2 id="result"> <p id="lowerN"></p> <p id="higherN"></p></h2>
+    </div>
+  </div>
+
+  <script>
+    function primeFinder() {
+      let lowerNumber = parseInt(document.getElementById("startNum").value); //startNum
+      let higherNumber = parseInt(document.getElementById("endNum").value); //endNum
+  
+      let primeNumbers = ""; // Accumulator for prime numbers
+  
+      for (let i = lowerNumber; i <= higherNumber; i++) {
+        let flag = 0;
+  
+        for (let j = 2; j < i; j++) {
+          if (i % j == 0) {
+            flag = 1;
+            break;
+          }
+        }
+  
+        if (i > 1 && flag == 0) {
+          primeNumbers += `${i} `;
+        }
+      }
+  
+      // Update the result 
+      let printer = document.getElementById("result");
+      printer.innerText = "The prime numbers are: " + primeNumbers;
+    }
+  </script>
+  
+</body>
+</html>
+

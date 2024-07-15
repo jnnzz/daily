@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="secondAct.css">
+</head>
+<body>
+  <nav>
+    <hr>
+    <div class="forNav">
+      <ul>
+        <li><button><a href="First.html">Task #1</a></button></li>
+        <li><button><a href="second.html">Task #2</a></button></li>
+        <li><button><a href="third.html">Task #3</a></button></li>
+        <li><button><a href="fourth.html">Task #4</a></button></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="title">
+    <h1>Triangle Checker</h1>
+    </div>
+    <!--sideA-->
+      <div class="first">
+        <label for="sideA">Enter length of Side A:</label>
+          <input type="number" id="sideA" placeholder="Side A" required><br>
+    <!--sideB-->
+        <label for="sideB">Enter length of Side B:</label>
+          <input type="number" id="sideB" placeholder="Side B" required><br>
+    <!--sideC-->
+        <label for="sideC">Enter length of Side C:</label>
+          <input type="number" id="sideC" placeholder="Side C" required><br>
+      </div>
+    <!--BTN-->
+    <div class="button">
+      <button onclick="check()">Check</button>
+    </div>
+    <!--RESULT-->
+    <div class="result" id="result"></div>
+  </div>
+  <script>
+    function check(){
+      let sideA = parseFloat(document.getElementById('sideA').value); //ValueA
+      let sideB = parseFloat(document.getElementById('sideB').value); //ValueB
+      let sideC = parseFloat(document.getElementById('sideC').value); //ValueC
+
+      let result = document.getElementById("result");
+      
+      if (isNaN(sideA) || isNaN(sideB) || isNaN(sideC)) {
+        alert ('Please enter valid numerical values for all sides.');
+      } else if (sideA <= 0 || sideB <= 0 || sideC <= 0) {
+        result.innerHTML = 'Please enter valid positive lengths for all sides.';
+      } else if (sideA + sideB + sideC > 180) {
+        result.innerHTML = 'These side lengths cannot form a triangle.';
+      } else if (sideA + sideB + sideC < 180) { 
+        result.innerHTML = 'These side lengths cannot form a triangle.';
+      } else if (sideA === sideB && sideB === sideC) {
+        result.innerHTML = 'This is an Equilateral Triangle.';
+      } else if (sideA === sideB || sideA === sideC || sideB === sideC) {
+        result.innerHTML = 'This is an Isosceles Triangle.';
+      } else {
+        result.innerHTML = 'This is a Scalene Triangle.';
+      }
+    }
+  
+  </script>
+</body>
+</html>

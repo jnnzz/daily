@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body, html {
+  background-color: rgb(58, 121, 100);
+  background-image: url(https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 22px;
+  font-family: calibri;
+
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  width: 480px;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid black;
+  overflow: hidden;
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.28);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(7.9px);
+-webkit-backdrop-filter: blur(7.9px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+-webkit-box-shadow:0px 0px 33px 11px rgba(0,0,0,0.84);
+-moz-box-shadow: 0px 0px 33px 11px rgba(0,0,0,0.84);
+box-shadow: 0px 0px 33px 11px rgba(0,0,0,0.84);
+}
+h1 {
+  padding-top: 50px;
+  margin-top: -160px;
+  text-align: center;
+  font-style: italic;
+  font-weight: bolder;
+  text-shadow: 5px 5px 3px rgba(110,153,200,0.86);
+}
+.child1 {
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+input {
+  padding: 5px;
+  border-radius: 5px;
+  border: none; 
+}
+
+.child2 input {
+  margin-left: 10px;
+}
+input {
+  -webkit-box-shadow:0px 0px 22px 12px rgba(45,255,196,0.29);
+-moz-box-shadow: 0px 0px 22px 12px rgba(45,255,196,0.29);
+box-shadow: 0px 0px 22px 12px rgba(45,255,196,0.29);
+}
+button {
+  margin-top: 30px;
+  font-size: 17px;
+  padding: 7px;
+  border-radius: 5px;
+  border-color: rgb(106, 177, 177);
+  background-color: rgb(88, 164, 167);
+  border: 1px solid rgb(12, 68, 94);
+  cursor: pointer;
+  transition: .7s;
+}
+button:hover {
+  background-color: white;
+  color: rgb(22, 43, 44);
+}
+.result {
+  position:fixed;
+  margin-top: 250px; 
+  overflow-y: auto; 
+  width: 460px;
+  max-height: 100px; /
+}
