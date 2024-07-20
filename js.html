@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Simple Input Form</title>
+</head>
+<body>
+ <h1>Welcome to the Simple Condition program!</h1>
+ <p>Enter any integer number:</p>
+ <label for="number">Number:</label>
+ <input type="number" id="number" name="number" required><br><br>
+ 
+ 
+ <button onclick="submitForm()">Submit</button>
+ 
+ <script>
+ function submitForm() {
+   let number = parseInt(document.getElementById("number").value);
+   if (!isNaN(number)) { // Check if the input is a valid number
+     if (number > 0) {
+       alert("Your inputted number is positive.");
+     } else if (number < 0) {
+       alert("Your inputted number is negative.");
+     } else {
+       alert("Your inputted number is zero.");
+     }
+   } else {
+     alert("Please enter a valid number.");
+   }
+ }
+ </script>
+</body>
+</html>
