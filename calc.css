@@ -1,0 +1,86 @@
+body {
+    background-image: url('https://sconteneb3-1.fna.fbcdn.net/v/t31.18172-8/15844550_10155980476169466_5357746071674971533_o.jpg?_nc_cat=105&ccb=1-7&_nc_sid=2be8e3&_nc_eui2=AeFyBeJbkPncoyWZSJmHEpG6F0-i1Aw0UH8XT6LUDDRQf4pN9lAo1G0OYElUVgWz4ogdDaAkd6bnNxED7ego-oy8&_nc_ohc=en0tIYROorMAX_jzIaR&_nc_ht=scontent.fceb3-1.fna&oh=00_AfD50e3qTaKmvic8TqRY01Lwzwl2rlkRZMUWiOgNWI948Q&oe=657458EB');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: tahoma;    
+   
+}
+h1 {
+    line-height: 80px;
+    text-align: center;
+    font-family:Tahoma;
+    color: #1D5D9B;
+    font-size: 40px;
+    
+
+}
+#calcForm {
+    background-color: #D6E9EB;
+    border-radius: 10px;
+    transform: translateX(26px);
+    width: 400px;
+   box-shadow: 5px 5px 5px #00818F;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 150px;
+    transform: translateX(70px);
+}
+button {
+    width: 100px;
+    transform: translate(150px, -3px);
+    border-radius: 30px;
+    border-color: #37686D;
+    background-color: #37686D;
+    color:#D6E9EB;
+    font-size: 15px;
+}
+label {
+    width: 200px;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: 19px;
+}
+#num1, #num2 {
+    border-radius: 10px;
+    border: 0;
+    outline: none;
+    width: 150px;
+    transform: translate(210px, -19px);
+}
+input {
+    width: 20px;
+    transform: translate(170px,-19px);
+}
+.result {
+    background-color: #D6E9EB;
+    transform: translate(120px, 50px);
+    width: 200px;
+    padding-left: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+   
+}
+.container {
+    width:450px;
+    margin: 0 auto;
+    height: 500px;
+    background-color: #9DCBD0;
+    border-radius: 1px;
+    box-shadow: 5px 5px 5px #005C66;
+    border: 5px solid transparent;
+    border-image: linear-gradient(45deg, red, blue, green);
+    border-image-slice: 1;
+    animation: moveBorder 2s infinite alternate;
+}
+@keyframes moveBorder {
+    0% {
+        border-image-source: linear-gradient(45deg, red, blue, green);
+    }
+    100% {
+        border-image-source: linear-gradient(45deg, green, red, blue);
+    }
+  }
