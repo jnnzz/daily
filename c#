@@ -1,0 +1,49 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+//NAME: JAN LORENZ LAROCO
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int num1;
+        int num2;
+        string choose;
+        double result;
+
+        Console.Write("Enter number 1: ");
+        num1 = Convert.ToInt32(Console.ReadLine());
+        
+        Console.Write("Enter number 2: ");
+        num2 = Convert.ToInt32(Console.ReadLine());
+        
+        Console.Write("Choose an operator (+, -, *, /): ");
+        choose = Console.ReadLine();
+        
+       
+        switch (choose) 
+        {
+          case "+":
+            result = num1 + num2;
+            Console.WriteLine("Result is: " + result);
+            break;
+          case "-":
+            result = num1 - num2;
+            Console.WriteLine("Result is: " + result);
+            break;
+          case "*":
+            result = num1 * num2;
+            Console.WriteLine("Result is: " + result);
+            break;
+          case "/":
+             result = num1 / num2;
+            Console.WriteLine("Result is: " + result);
+            break;
+         
+         default:             
+            Console.WriteLine("Invalid input");
+            break;
+        }
+            }
+}
