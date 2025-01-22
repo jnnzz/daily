@@ -1,0 +1,24 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        string name = "Jan Lorenz Laroco";
+        int age = 19;
+        string address = "Saac 1 Buaya, Lapu-Lapu City";
+        string studentID = "23780778";
+        string nickname = "jan";
+        
+        Console.WriteLine ("Name: "+name);
+        Console.WriteLine ("Age: "+age);
+        Console.WriteLine ("Address: "+ address);
+        Console.WriteLine ("Student ID: "+studentID);
+        Console.WriteLine ("Nickname: " + nickname);
+
+
+    }
+}
